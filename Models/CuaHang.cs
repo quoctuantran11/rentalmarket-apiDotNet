@@ -11,7 +11,7 @@ public class CuaHang
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    [BsonElement("Name")]
+    // [BsonElement("Name")]
     // [JsonPropertyName("Name")]
     public string tench { get; set; } = null!;
 

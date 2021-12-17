@@ -6,7 +6,7 @@ namespace DiChoHoCS.Services;
 
 public class CuaHangService
 {
-    private readonly IMongoCollection<CuaHang> _CuaHangCollection;
+    private readonly IMongoCollection<CuaHang> _cuaHangCollection;
 
     public CuaHangService(
         IOptions<DiChoHoDatabaseSettings> diChoHoDatabaseSettings)
@@ -14,22 +14,22 @@ public class CuaHangService
         var mongoClient = new MongoClient(diChoHoDatabaseSettings.Value.ConnectionString);
         var mongoDatabase = mongoClient.GetDatabase(diChoHoDatabaseSettings.Value.DatabaseName);
 
-        _CuaHangCollection = mongoDatabase.GetCollection<CuaHang>(
+        _cuaHangCollection = mongoDatabase.GetCollection<CuaHang>(
             diChoHoDatabaseSettings.Value.CuaHangCollectionName);
     }
 
     public async Task<List<CuaHang>> GetAsync() =>
-        await _CuaHangCollection.Find(_ => true).ToListAsync();
+        await _cuaHangCollection.Find(_ => true).ToListAsync();
 
     public async Task<CuaHang?> GetAsync(string id) =>
-        await _CuaHangCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+        await _cuaHangCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
 
     public async Task CreateAsync(CuaHang newCuaHang) =>
-        await _CuaHangCollection.InsertOneAsync(newCuaHang);
+        await _cuaHangCollection.InsertOneAsync(newCuaHang);
 
     public async Task UpdateAsync(string id, CuaHang updatedCuaHang) =>
-        await _CuaHangCollection.ReplaceOneAsync(x => x.Id == id, updatedCuaHang);
+        await _cuaHangCollection.ReplaceOneAsync(x => x.Id == id, updatedCuaHang);
 
     public async Task RemoveAsync(string? id) =>
-        await _CuaHangCollection.DeleteOneAsync(x => x.Id == id);
+        await _cuaHangCollection.DeleteOneAsync(x => x.Id == id);
 }

@@ -8,32 +8,32 @@ namespace DiChoHoCS.Controllers;
 [Route("api/[controller]")]
 public class CuaHangController : ControllerBase
 {
-    private readonly CuaHangService _CuaHangService;
+    private readonly CuaHangService _cuaHangService;
 
     public CuaHangController(CuaHangService cuaHangService) =>
-        _CuaHangService = cuaHangService;
+        _cuaHangService = cuaHangService;
 
     [HttpGet]
     public async Task<List<CuaHang>> Get() =>
-        await _CuaHangService.GetAsync();
+        await _cuaHangService.GetAsync();
 
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<CuaHang>> Get(string id)
     {
-        var CuaHang = await _CuaHangService.GetAsync(id);
+        var cuaHang = await _cuaHangService.GetAsync(id);
 
-        if (CuaHang is null)
+        if (cuaHang is null)
         {
             return NotFound();
         }
 
-        return CuaHang;
+        return cuaHang;
     }
 
     [HttpPost]
     public async Task<IActionResult> Post(CuaHang newCuaHang)
     {
-        await _CuaHangService.CreateAsync(newCuaHang);
+        await _cuaHangService.CreateAsync(newCuaHang);
 
         return CreatedAtAction(nameof(Get), new { id = newCuaHang.Id }, newCuaHang);
     }
@@ -41,16 +41,16 @@ public class CuaHangController : ControllerBase
     [HttpPut("{id:length(24)}")]
     public async Task<IActionResult> Update(string id, CuaHang updatedCuaHang)
     {
-        var CuaHang = await _CuaHangService.GetAsync(id);
+        var cuaHang = await _cuaHangService.GetAsync(id);
 
-        if (CuaHang is null)
+        if (cuaHang is null)
         {
             return NotFound();
         }
 
-        updatedCuaHang.Id = CuaHang.Id;
+        updatedCuaHang.Id = cuaHang.Id;
 
-        await _CuaHangService.UpdateAsync(id, updatedCuaHang);
+        await _cuaHangService.UpdateAsync(id, updatedCuaHang);
 
         return NoContent();
     }
@@ -58,14 +58,14 @@ public class CuaHangController : ControllerBase
     [HttpDelete("{id:length(24)}")]
     public async Task<IActionResult> Delete(string id)
     {
-        var CuaHang = await _CuaHangService.GetAsync(id);
+        var cuaHang = await _cuaHangService.GetAsync(id);
 
-        if (CuaHang is null)
+        if (cuaHang is null)
         {
             return NotFound();
         }
 
-        await _CuaHangService.RemoveAsync(CuaHang.Id);
+        await _cuaHangService.RemoveAsync(cuaHang.Id);
 
         return NoContent();
     }

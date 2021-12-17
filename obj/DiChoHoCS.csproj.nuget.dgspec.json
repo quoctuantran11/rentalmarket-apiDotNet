@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kien\\Downloads\\DiChoHoCS\\DiChoHoCS\\DiChoHoCS.csproj": {}
+    "C:\\Users\\long\\Desktop\\dichohocs\\DiChoHoCS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kien\\Downloads\\DiChoHoCS\\DiChoHoCS\\DiChoHoCS.csproj": {
+    "C:\\Users\\long\\Desktop\\dichohocs\\DiChoHoCS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kien\\Downloads\\DiChoHoCS\\DiChoHoCS\\DiChoHoCS.csproj",
+        "projectUniqueName": "C:\\Users\\long\\Desktop\\dichohocs\\DiChoHoCS.csproj",
         "projectName": "DiChoHoCS",
-        "projectPath": "C:\\Users\\Kien\\Downloads\\DiChoHoCS\\DiChoHoCS\\DiChoHoCS.csproj",
-        "packagesPath": "C:\\Users\\Kien\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kien\\Downloads\\DiChoHoCS\\DiChoHoCS\\obj\\",
+        "projectPath": "C:\\Users\\long\\Desktop\\dichohocs\\DiChoHoCS.csproj",
+        "packagesPath": "C:\\Users\\long\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\long\\Desktop\\dichohocs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Kien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\long\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -8,6 +8,7 @@ builder.Services.Configure<DiChoHoDatabaseSettings>(
     builder.Configuration.GetSection("DiChoHoDatabase"));
 
 builder.Services.AddSingleton<DoiTacService>();
+builder.Services.AddSingleton<CuaHangService>();
 
 builder.Services.AddControllers().AddJsonOptions(
     options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
