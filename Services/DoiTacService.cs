@@ -11,7 +11,8 @@ public class DoiTacService
     public DoiTacService(
         IOptions<DiChoHoDatabaseSettings> diChoHoDatabaseSettings)
     {
-        var mongoClient = new MongoClient("mongodb+srv://admin:admin@DiChoHo.axyzp.mongodb.net/DiChoHo?retryWrites=true&w=majority");
+        var mongoClient = new MongoClient(
+            diChoHoDatabaseSettings.Value.ConnectionString);
 
         var mongoDatabase = mongoClient.GetDatabase(
             diChoHoDatabaseSettings.Value.DatabaseName);

@@ -9,9 +9,9 @@ public class DoiTac
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    // [BsonElement("Name")]
-    // [JsonPropertyName("Name")]
-    public string TenDT { get; set; } = null!;
+    //[BsonElement("Name")]
+    [JsonPropertyName("Name")]
+    public string tendt { get; set; } = null!;
 
     public string SDT { get; set; } = null!;
 
@@ -35,4 +35,16 @@ public class DiChoHoDatabaseSettings
     public string DatabaseName { get; set; } = null!;
 
     public string DoiTacCollectionName { get; set; } = null!;
+
+    public string CuaHangCollectionName { get; set; } = null!;
+
+    public string KhachHangCollectionName { get; set; } = null!;
+
+    public string ShipperCollectionName { get; set; } = null!;
+
+    public string MatHangCollectionName { get; set; } = null!;
+
+    public string DonHangCollectionName { get; set; } = null!;
+
+    public string ChiTietDonHangCollectionName { get; set; } = null!;
 }
