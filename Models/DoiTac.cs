@@ -10,7 +10,7 @@ public class DoiTac
     public string? Id { get; set; }
 
     //[BsonElement("Name")]
-    [JsonPropertyName("Name")]
+    // [JsonPropertyName("Name")]
     public string tendt { get; set; } = null!;
 
     public string SDT { get; set; } = null!;

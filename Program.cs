@@ -3,6 +3,16 @@ using DiChoHoCS.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(MyAllowSpecificOrigins, builder =>
+    {
+        builder.AllowAnyOrigin();
+    });
+});
+
 // Add services to the container.
 builder.Services.Configure<DiChoHoDatabaseSettings>(
     builder.Configuration.GetSection("DiChoHoDatabase"));
@@ -29,6 +39,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 
