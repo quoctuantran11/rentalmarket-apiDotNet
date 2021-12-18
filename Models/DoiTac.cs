@@ -1,4 +1,3 @@
-using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -9,9 +8,7 @@ public class DoiTac
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    //[BsonElement("Name")]
-    // [JsonPropertyName("Name")]
-    public string tendt { get; set; } = null!;
+    public string TenDT { get; set; } = null!;
 
     public string SDT { get; set; } = null!;
 

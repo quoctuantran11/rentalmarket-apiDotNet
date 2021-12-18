@@ -21,7 +21,6 @@ public class DoiTacController : ControllerBase
     public async Task<ActionResult<DoiTac>> Get(string id)
     {
         var doiTac = await _doiTacService.GetAsync(id);
-
         if (doiTac is null)
         {
             return NotFound();
@@ -42,14 +41,12 @@ public class DoiTacController : ControllerBase
     public async Task<IActionResult> Update(string id, DoiTac updatedDoiTac)
     {
         var doiTac = await _doiTacService.GetAsync(id);
-
         if (doiTac is null)
         {
             return NotFound();
         }
 
         updatedDoiTac.Id = doiTac.Id;
-
         await _doiTacService.UpdateAsync(id, updatedDoiTac);
 
         return NoContent();
@@ -59,12 +56,10 @@ public class DoiTacController : ControllerBase
     public async Task<IActionResult> Delete(string id)
     {
         var doiTac = await _doiTacService.GetAsync(id);
-
         if (doiTac is null)
         {
             return NotFound();
         }
-
         await _doiTacService.RemoveAsync(doiTac.Id);
 
         return NoContent();
