@@ -11,16 +11,20 @@ public class MatHang
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    [BsonElement("Name")]
+    // [BsonElement("Name")]
     // [JsonPropertyName("Name")]
-    public string tench { get; set; } = null!;
+    public string ten { get; set; } = null!;
 
-    public string sdt { get; set; } = null!;
+    public string xuatxu { get; set; } = null!;
 
-    public string diachi { get; set; } = null!;
+    public int soluongton;
 
-    public string makv { get; set; } = null!;
+    public double khoiluong ;
 
-    public string madt { get; set; } = null!;
+    public int gia { get; set; }
+
+    public string maloai { get; set; } = null!;
+
+    public string mach { get; set; } = null!;
 }
 
