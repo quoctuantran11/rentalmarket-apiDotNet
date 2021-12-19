@@ -43,8 +43,13 @@ public class DiChoHoDatabaseSettings
 
     public string ComboMatHangCollectionName { get; set; } = null!;
 
-
     public string DonHangCollectionName { get; set; } = null!;
 
-    public string ChiTietDonHangCollectionName { get; set; } = null!;
+    public string ChiTietDonHang_MatHangCollectionName { get; set; } = null!;
+
+    public string ChiTietDonHang_ComboCollectionName { get; set; } = null!;
+
+    public string ChiTietComboCollectionName { get; set; } = null!;
+
+    public string GioHangCollectionName { get; set; } = null!;
 }

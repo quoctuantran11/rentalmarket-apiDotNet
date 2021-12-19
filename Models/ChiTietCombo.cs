@@ -5,24 +5,19 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace DiChoHoCS.Models;
 
-public class ComboMatHang
+public class ChiTietCombo
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    // [BsonElement("Name")]
+    //[BsonElement("Name")]
     // [JsonPropertyName("Name")]
-    public string tencombo { get; set; } = null!;
+    public string macombo { get; set; } = null!;
 
-    public int soluongton { get; set; }
+    public string mamathang { get; set; } = null!;
 
-    public double khoiluong { get; set; }
-
-    public int gia { get; set; }
-
-
-    public string mach { get; set; } = null!;
+    public int  soluong { get; set; } 
 
 }
 

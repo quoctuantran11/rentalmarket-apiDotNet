@@ -5,7 +5,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace DiChoHoCS.Models;
 
-public class DonHang
+public class GioHang
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
@@ -13,17 +13,10 @@ public class DonHang
 
     //[BsonElement("Name")]
     // [JsonPropertyName("Name")]
-    public string tinhtrangdon { get; set; } = null!;
-
-    public string hinhthucthanhtoan { get; set; } = null!;
-
-    public int tongtien { get; set; } 
-
     public string makh { get; set; } = null!;
 
-    public string mach { get; set; } = null!;
-    public string mashipper { get; set; } = null!;
-    public string manvxl { get; set; } = null!;
+    public string mamh { get; set; } = null!;
 
+    public string macombo { get; set; } = null!;
 }
 

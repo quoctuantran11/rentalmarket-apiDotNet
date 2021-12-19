@@ -19,6 +19,13 @@ builder.Services.Configure<DiChoHoDatabaseSettings>(
 
 builder.Services.AddSingleton<DoiTacService>();
 builder.Services.AddSingleton<CuaHangService>();
+builder.Services.AddSingleton<MatHangService>();
+builder.Services.AddSingleton<ComboMatHangService>();
+builder.Services.AddSingleton<ChiTietComboService>();
+builder.Services.AddSingleton<DonHangService>();
+builder.Services.AddSingleton<ChiTietDonHang_MatHangService>();
+builder.Services.AddSingleton<ChiTietDonHang_ComboService>();
+builder.Services.AddSingleton<GioHangService>();
 
 builder.Services.AddControllers().AddJsonOptions(
     options => options.JsonSerializerOptions.PropertyNamingPolicy = null);

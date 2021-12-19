@@ -6,7 +6,7 @@ namespace DiChoHoCS.Services;
 
 public class ComboMatHangService
 {
-    private readonly IMongoCollection<ComboMatHang> _comboMatHangCollection;
+    private readonly IMongoCollection<ComboMatHang> _ComboMatHang;
 
     public ComboMatHangService(
         IOptions<DiChoHoDatabaseSettings> diChoHoDatabaseSettings)
@@ -14,22 +14,22 @@ public class ComboMatHangService
         var mongoClient = new MongoClient(diChoHoDatabaseSettings.Value.ConnectionString);
         var mongoDatabase = mongoClient.GetDatabase(diChoHoDatabaseSettings.Value.DatabaseName);
 
-        _comboMatHangCollection = mongoDatabase.GetCollection<ComboMatHang>(
+        _ComboMatHang = mongoDatabase.GetCollection<ComboMatHang>(
             diChoHoDatabaseSettings.Value.ComboMatHangCollectionName);
     }
 
     public async Task<List<ComboMatHang>> GetAsync() =>
-        await _comboMatHangCollection.Find(_ => true).ToListAsync();
+        await _ComboMatHang.Find(_ => true).ToListAsync();
 
     public async Task<ComboMatHang?> GetAsync(string id) =>
-        await _comboMatHangCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
+        await _ComboMatHang.Find(x => x.Id == id).FirstOrDefaultAsync();
 
     public async Task CreateAsync(ComboMatHang newComboMatHang) =>
-        await _comboMatHangCollection.InsertOneAsync(newComboMatHang);
+        await _ComboMatHang.InsertOneAsync(newComboMatHang);
 
     public async Task UpdateAsync(string id, ComboMatHang updatedComboMatHang) =>
-        await _comboMatHangCollection.ReplaceOneAsync(x => x.Id == id, updatedComboMatHang);
+        await _ComboMatHang.ReplaceOneAsync(x => x.Id == id, updatedComboMatHang);
 
     public async Task RemoveAsync(string? id) =>
-        await _comboMatHangCollection.DeleteOneAsync(x => x.Id == id);
+        await _ComboMatHang.DeleteOneAsync(x => x.Id == id);
 }
