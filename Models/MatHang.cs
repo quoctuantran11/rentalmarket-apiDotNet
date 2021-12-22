@@ -1,30 +1,26 @@
-using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-
 namespace DiChoHoCS.Models;
-
 public class MatHang
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    // [BsonElement("Name")]
-    // [JsonPropertyName("Name")]
-    public string ten { get; set; } = null!;
+    public string ten_mh { get; set; } = null!;
 
-    public string xuatxu { get; set; } = null!;
+    public string xuat_xu { get; set; } = null!;
 
-    public int soluongton;
+    public int so_luong_ton { get; set; }
 
-    public double khoiluong ;
+    public double khoi_luong { get; set; }
 
-    public int gia { get; set; }
+    public int gia_ban { get; set; }
 
-    public string maloai { get; set; } = null!;
+    public string ma_loai { get; set; } = null!;
 
-    public string mach { get; set; } = null!;
+    public string ma_ch { get; set; } = null!;
+
+    public string hinh_anh { get; set; } = null!;
 }
-

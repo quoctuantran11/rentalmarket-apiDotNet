@@ -10,8 +10,8 @@ public class ComboMatHangController : ControllerBase
 {
     private readonly ComboMatHangService _comboMatHangService;
 
-    public ComboMatHangController(ComboMatHangService cbMatHangService) =>
-        _comboMatHangService = cbMatHangService;
+    public ComboMatHangController(ComboMatHangService comboMatHangService) =>
+        _comboMatHangService = comboMatHangService;
 
     [HttpGet]
     public async Task<List<ComboMatHang>> Get() =>
@@ -20,22 +20,22 @@ public class ComboMatHangController : ControllerBase
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<ComboMatHang>> Get(string id)
     {
-        var cbmathang = await _comboMatHangService.GetAsync(id);
+        var comboMatHang = await _comboMatHangService.GetAsync(id);
 
-        if (cbmathang is null)
+        if (comboMatHang is null)
         {
             return NotFound();
         }
 
-        return cbmathang;
+        return comboMatHang;
     }
 
     [HttpPost]
-    public async Task<IActionResult> Post(ComboMatHang newCBMatHang)
+    public async Task<IActionResult> Post(ComboMatHang newComboMatHang)
     {
-        await _comboMatHangService.CreateAsync(newCBMatHang);
+        await _comboMatHangService.CreateAsync(newComboMatHang);
 
-        return CreatedAtAction(nameof(Get), new { id = newCBMatHang.Id }, newCBMatHang);
+        return CreatedAtAction(nameof(Get), new { id = newComboMatHang.Id }, newComboMatHang);
     }
 
     [HttpPut("{id:length(24)}")]
@@ -58,14 +58,14 @@ public class ComboMatHangController : ControllerBase
     [HttpDelete("{id:length(24)}")]
     public async Task<IActionResult> Delete(string id)
     {
-        var cbMatHang = await _comboMatHangService.GetAsync(id);
+        var comboMatHang = await _comboMatHangService.GetAsync(id);
 
-        if (cbMatHang is null)
+        if (comboMatHang is null)
         {
             return NotFound();
         }
 
-        await _comboMatHangService.RemoveAsync(cbMatHang.Id);
+        await _comboMatHangService.RemoveAsync(comboMatHang.Id);
 
         return NoContent();
     }

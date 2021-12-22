@@ -23,8 +23,8 @@ builder.Services.AddSingleton<MatHangService>();
 builder.Services.AddSingleton<ComboMatHangService>();
 builder.Services.AddSingleton<ChiTietComboService>();
 builder.Services.AddSingleton<DonHangService>();
-builder.Services.AddSingleton<ChiTietDonHang_MatHangService>();
-builder.Services.AddSingleton<ChiTietDonHang_ComboService>();
+builder.Services.AddSingleton<ChiTietDonHangMatHangService>();
+builder.Services.AddSingleton<ChiTietDonHangComboService>();
 builder.Services.AddSingleton<GioHangService>();
 
 builder.Services.AddControllers().AddJsonOptions(

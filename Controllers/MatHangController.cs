@@ -20,14 +20,14 @@ public class MatHangController : ControllerBase
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<MatHang>> Get(string id)
     {
-        var MatHang = await _matHangService.GetAsync(id);
+        var matHang = await _matHangService.GetAsync(id);
 
-        if (MatHang is null)
+        if (matHang is null)
         {
             return NotFound();
         }
 
-        return MatHang;
+        return matHang;
     }
 
     [HttpPost]
@@ -41,14 +41,14 @@ public class MatHangController : ControllerBase
     [HttpPut("{id:length(24)}")]
     public async Task<IActionResult> Update(string id, MatHang updatedMatHang)
     {
-        var MatHang = await _matHangService.GetAsync(id);
+        var matHang = await _matHangService.GetAsync(id);
 
-        if (MatHang is null)
+        if (matHang is null)
         {
             return NotFound();
         }
 
-        updatedMatHang.Id = MatHang.Id;
+        updatedMatHang.Id = matHang.Id;
 
         await _matHangService.UpdateAsync(id, updatedMatHang);
 
@@ -58,14 +58,14 @@ public class MatHangController : ControllerBase
     [HttpDelete("{id:length(24)}")]
     public async Task<IActionResult> Delete(string id)
     {
-        var MatHang = await _matHangService.GetAsync(id);
+        var matHang = await _matHangService.GetAsync(id);
 
-        if (MatHang is null)
+        if (matHang is null)
         {
             return NotFound();
         }
 
-        await _matHangService.RemoveAsync(MatHang.Id);
+        await _matHangService.RemoveAsync(matHang.Id);
 
         return NoContent();
     }

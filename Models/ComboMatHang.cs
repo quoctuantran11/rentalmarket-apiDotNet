@@ -1,7 +1,5 @@
-using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-
 
 namespace DiChoHoCS.Models;
 
@@ -11,18 +9,13 @@ public class ComboMatHang
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    // [BsonElement("Name")]
-    // [JsonPropertyName("Name")]
-    public string tencombo { get; set; } = null!;
+    public string ten_combo { get; set; } = null!;
 
-    public int soluongton { get; set; }
+    public int so_luong_ton { get; set; }
 
-    public double khoiluong { get; set; }
+    public double khoi_luong { get; set; }
 
-    public int gia { get; set; }
+    public int gia_ban { get; set; }
 
-
-    public string mach { get; set; } = null!;
-
+    public string ma_ch { get; set; } = null!;
 }
-

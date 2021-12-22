@@ -2,7 +2,6 @@ using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-
 namespace DiChoHoCS.Models;
 
 public class GioHang
@@ -19,4 +18,3 @@ public class GioHang
 
     public string macombo { get; set; } = null!;
 }
-

@@ -8,32 +8,32 @@ namespace DiChoHoCS.Controllers;
 [Route("api/[controller]")]
 public class GioHangController : ControllerBase
 {
-    private readonly GioHangService _GioHangService;
+    private readonly GioHangService _gioHangService;
 
-    public GioHangController(GioHangService GioHangService) =>
-        _GioHangService = GioHangService;
+    public GioHangController(GioHangService gioHangService) =>
+        _gioHangService = gioHangService;
 
     [HttpGet]
     public async Task<List<GioHang>> Get() =>
-        await _GioHangService.GetAsync();
+        await _gioHangService.GetAsync();
 
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<GioHang>> Get(string id)
     {
-        var GioHang = await _GioHangService.GetAsync(id);
+        var gioHang = await _gioHangService.GetAsync(id);
 
-        if (GioHang is null)
+        if (gioHang is null)
         {
             return NotFound();
         }
 
-        return GioHang;
+        return gioHang;
     }
 
     [HttpPost]
     public async Task<IActionResult> Post(GioHang newGioHang)
     {
-        await _GioHangService.CreateAsync(newGioHang);
+        await _gioHangService.CreateAsync(newGioHang);
 
         return CreatedAtAction(nameof(Get), new { id = newGioHang.Id }, newGioHang);
     }
@@ -41,16 +41,16 @@ public class GioHangController : ControllerBase
     [HttpPut("{id:length(24)}")]
     public async Task<IActionResult> Update(string id, GioHang updatedGioHang)
     {
-        var GioHang = await _GioHangService.GetAsync(id);
+        var gioHang = await _gioHangService.GetAsync(id);
 
-        if (GioHang is null)
+        if (gioHang is null)
         {
             return NotFound();
         }
 
-        updatedGioHang.Id = GioHang.Id;
+        updatedGioHang.Id = gioHang.Id;
 
-        await _GioHangService.UpdateAsync(id, updatedGioHang);
+        await _gioHangService.UpdateAsync(id, updatedGioHang);
 
         return NoContent();
     }
@@ -58,14 +58,14 @@ public class GioHangController : ControllerBase
     [HttpDelete("{id:length(24)}")]
     public async Task<IActionResult> Delete(string id)
     {
-        var GioHang = await _GioHangService.GetAsync(id);
+        var gioHang = await _gioHangService.GetAsync(id);
 
-        if (GioHang is null)
+        if (gioHang is null)
         {
             return NotFound();
         }
 
-        await _GioHangService.RemoveAsync(GioHang.Id);
+        await _gioHangService.RemoveAsync(gioHang.Id);
 
         return NoContent();
     }

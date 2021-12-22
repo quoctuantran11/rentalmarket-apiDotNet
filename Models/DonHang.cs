@@ -1,29 +1,22 @@
-using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-
 namespace DiChoHoCS.Models;
-
 public class DonHang
 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    //[BsonElement("Name")]
-    // [JsonPropertyName("Name")]
-    public string tinhtrangdon { get; set; } = null!;
+    public string tinh_trang { get; set; } = null!;
 
-    public string hinhthucthanhtoan { get; set; } = null!;
+    public string hinh_thuc_thanh_toan { get; set; } = null!;
 
-    public int tongtien { get; set; } 
+    public int tong_tien { get; set; }
 
-    public string makh { get; set; } = null!;
+    public string ma_kh { get; set; } = null!;
 
-    public string mach { get; set; } = null!;
-    public string mashipper { get; set; } = null!;
-    public string manvxl { get; set; } = null!;
+    public string ma_ch { get; set; } = null!;
 
+    public string ma_shipper { get; set; } = null!;
 }
-

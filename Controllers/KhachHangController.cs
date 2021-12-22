@@ -8,32 +8,32 @@ namespace DiChoHoCS.Controllers;
 [Route("api/[controller]")]
 public class KhachHangController : ControllerBase
 {
-    private readonly KhachHangService _KhachHangService;
+    private readonly KhachHangService _khachHangService;
 
-    public KhachHangController(KhachHangService KhachHangService) =>
-        _KhachHangService = KhachHangService;
+    public KhachHangController(KhachHangService khachHangService) =>
+        _khachHangService = khachHangService;
 
     [HttpGet]
     public async Task<List<KhachHang>> Get() =>
-        await _KhachHangService.GetAsync();
+        await _khachHangService.GetAsync();
 
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<KhachHang>> Get(string id)
     {
-        var KhachHang = await _KhachHangService.GetAsync(id);
+        var khachHang = await _khachHangService.GetAsync(id);
 
-        if (KhachHang is null)
+        if (khachHang is null)
         {
             return NotFound();
         }
 
-        return KhachHang;
+        return khachHang;
     }
 
     [HttpPost]
     public async Task<IActionResult> Post(KhachHang newKhachHang)
     {
-        await _KhachHangService.CreateAsync(newKhachHang);
+        await _khachHangService.CreateAsync(newKhachHang);
 
         return CreatedAtAction(nameof(Get), new { id = newKhachHang.Id }, newKhachHang);
     }
@@ -41,16 +41,16 @@ public class KhachHangController : ControllerBase
     [HttpPut("{id:length(24)}")]
     public async Task<IActionResult> Update(string id, KhachHang updatedKhachHang)
     {
-        var KhachHang = await _KhachHangService.GetAsync(id);
+        var khachHang = await _khachHangService.GetAsync(id);
 
-        if (KhachHang is null)
+        if (khachHang is null)
         {
             return NotFound();
         }
 
-        updatedKhachHang.Id = KhachHang.Id;
+        updatedKhachHang.Id = khachHang.Id;
 
-        await _KhachHangService.UpdateAsync(id, updatedKhachHang);
+        await _khachHangService.UpdateAsync(id, updatedKhachHang);
 
         return NoContent();
     }
@@ -58,14 +58,14 @@ public class KhachHangController : ControllerBase
     [HttpDelete("{id:length(24)}")]
     public async Task<IActionResult> Delete(string id)
     {
-        var KhachHang = await _KhachHangService.GetAsync(id);
+        var khachHang = await _khachHangService.GetAsync(id);
 
-        if (KhachHang is null)
+        if (khachHang is null)
         {
             return NotFound();
         }
 
-        await _KhachHangService.RemoveAsync(KhachHang.Id);
+        await _khachHangService.RemoveAsync(khachHang.Id);
 
         return NoContent();
     }

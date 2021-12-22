@@ -8,32 +8,32 @@ namespace DiChoHoCS.Controllers;
 [Route("api/[controller]")]
 public class ShipperController : ControllerBase
 {
-    private readonly ShipperService _ShipperService;
+    private readonly ShipperService _shipperService;
 
-    public ShipperController(ShipperService ShipperService) =>
-        _ShipperService = ShipperService;
+    public ShipperController(ShipperService shipperService) =>
+        _shipperService = shipperService;
 
     [HttpGet]
     public async Task<List<Shipper>> Get() =>
-        await _ShipperService.GetAsync();
+        await _shipperService.GetAsync();
 
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<Shipper>> Get(string id)
     {
-        var Shipper = await _ShipperService.GetAsync(id);
+        var shipper = await _shipperService.GetAsync(id);
 
-        if (Shipper is null)
+        if (shipper is null)
         {
             return NotFound();
         }
 
-        return Shipper;
+        return shipper;
     }
 
     [HttpPost]
     public async Task<IActionResult> Post(Shipper newShipper)
     {
-        await _ShipperService.CreateAsync(newShipper);
+        await _shipperService.CreateAsync(newShipper);
 
         return CreatedAtAction(nameof(Get), new { id = newShipper.Id }, newShipper);
     }
@@ -41,16 +41,16 @@ public class ShipperController : ControllerBase
     [HttpPut("{id:length(24)}")]
     public async Task<IActionResult> Update(string id, Shipper updatedShipper)
     {
-        var Shipper = await _ShipperService.GetAsync(id);
+        var shipper = await _shipperService.GetAsync(id);
 
-        if (Shipper is null)
+        if (shipper is null)
         {
             return NotFound();
         }
 
-        updatedShipper.Id = Shipper.Id;
+        updatedShipper.Id = shipper.Id;
 
-        await _ShipperService.UpdateAsync(id, updatedShipper);
+        await _shipperService.UpdateAsync(id, updatedShipper);
 
         return NoContent();
     }
@@ -58,14 +58,14 @@ public class ShipperController : ControllerBase
     [HttpDelete("{id:length(24)}")]
     public async Task<IActionResult> Delete(string id)
     {
-        var Shipper = await _ShipperService.GetAsync(id);
+        var shipper = await _shipperService.GetAsync(id);
 
-        if (Shipper is null)
+        if (shipper is null)
         {
             return NotFound();
         }
 
-        await _ShipperService.RemoveAsync(Shipper.Id);
+        await _shipperService.RemoveAsync(shipper.Id);
 
         return NoContent();
     }

@@ -1,4 +1,3 @@
-using System.Text.Json.Serialization;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
@@ -9,22 +8,19 @@ public class KhachHang
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    [BsonElement("Name")]
-    // [JsonPropertyName("Name")]
-    public string TenDT { get; set; } = null!;
+    public string cccd { get; set; } = null!;
 
-    public string SDT { get; set; } = null!;
+    public string sdt { get; set; } = null!;
 
-    public string CMND { get; set; } = null!;
+    public string dia_chi { get; set; } = null!;
 
-    public string DiaChiDT { get; set; } = null!;
+    public string ma_kv { get; set; } = null!;
 
-    public string TenCH { get; set; } = null!;
+    public string gioi_tinh { get; set; } = null!;
 
-    public string DiaChiCH { get; set; } = null!;
+    public string ten_kh { get; set; } = null!;
 
-    public DateTime NgayThamGia { get; set; }
+    public DateTime ngay_sinh { get; set; }
 
-    public string TrangThai { get; set; } = null!;
+    public string ma_tk { get; set; } = null!;
 }
-
