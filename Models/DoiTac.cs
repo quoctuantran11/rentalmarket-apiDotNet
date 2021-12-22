@@ -8,21 +8,24 @@ public class DoiTac
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    public string TenDT { get; set; } = null!;
+    public string sdt { get; set; } = null!;
 
-    public string SDT { get; set; } = null!;
+    public string cccd { get; set; } = null!;
 
-    public string CMND { get; set; } = null!;
+    public string dia_chi_lien_he { get; set; } = null!;
 
-    public string DiaChiDT { get; set; } = null!;
+    public string loai_doi_tac { get; set; } = null!;
 
-    public string TenCH { get; set; } = null!;
+    public DateTime ngay_tham_gia { get; set; }
 
-    public string DiaChiCH { get; set; } = null!;
+    public string so_luong_cua_hang { get; set; } = null!;
 
-    public DateTime NgayThamGia { get; set; }
+    public string ten_dt { get; set; } = null!;
 
-    public string TrangThai { get; set; } = null!;
+    public string trang_thai_tham_gia { get; set; } = null!;
+
+    public string hinh_anh { get; set; } = null!;
+
 }
 
 public class DiChoHoDatabaseSettings
