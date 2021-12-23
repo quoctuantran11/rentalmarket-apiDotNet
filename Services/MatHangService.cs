@@ -10,10 +10,8 @@ public class MatHangService
     public MatHangService(
         IOptions<DiChoHoDatabaseSettings> diChoHoDatabaseSettings)
     {
-        var mongoClient = new MongoClient(
-            diChoHoDatabaseSettings.Value.ConnectionString);
-        var mongoDatabase = mongoClient.GetDatabase(
-            diChoHoDatabaseSettings.Value.DatabaseName);
+        var mongoClient = new MongoClient(diChoHoDatabaseSettings.Value.ConnectionString);
+        var mongoDatabase = mongoClient.GetDatabase(diChoHoDatabaseSettings.Value.DatabaseName);
 
         _matHangCollection = mongoDatabase.GetCollection<MatHang>(
             diChoHoDatabaseSettings.Value.MatHangCollectionName);

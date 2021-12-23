@@ -3,7 +3,6 @@ using DiChoHoCS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiChoHoCS.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 public class ChiTietDonHangMatHangController : ControllerBase
@@ -49,7 +48,6 @@ public class ChiTietDonHangMatHangController : ControllerBase
         }
 
         updatedChiTietDonHangMatHang.Id = chiTietDonHangMatHang.Id;
-
         await _chiTietDonHangMatHangService.UpdateAsync(id, updatedChiTietDonHangMatHang);
 
         return NoContent();

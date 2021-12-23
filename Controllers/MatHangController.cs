@@ -3,7 +3,6 @@ using DiChoHoCS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiChoHoCS.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 public class MatHangController : ControllerBase
@@ -49,7 +48,6 @@ public class MatHangController : ControllerBase
         }
 
         updatedMatHang.Id = matHang.Id;
-
         await _matHangService.UpdateAsync(id, updatedMatHang);
 
         return NoContent();

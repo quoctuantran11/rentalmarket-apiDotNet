@@ -3,7 +3,6 @@ using DiChoHoCS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiChoHoCS.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 public class CuaHangController : ControllerBase
@@ -49,7 +48,6 @@ public class CuaHangController : ControllerBase
         }
 
         updatedCuaHang.Id = cuaHang.Id;
-
         await _cuaHangService.UpdateAsync(id, updatedCuaHang);
 
         return NoContent();

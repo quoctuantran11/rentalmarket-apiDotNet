@@ -3,15 +3,14 @@ using DiChoHoCS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiChoHoCS.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 public class ChiTietDonHangComboController : ControllerBase
 {
     private readonly ChiTietDonHangComboService _chiTietDonHangComboService;
 
-    public ChiTietDonHangComboController(ChiTietDonHangComboService ChiTietDonHangComboService) =>
-        _chiTietDonHangComboService = ChiTietDonHangComboService;
+    public ChiTietDonHangComboController(ChiTietDonHangComboService chiTietDonHangComboService) =>
+        _chiTietDonHangComboService = chiTietDonHangComboService;
 
     [HttpGet]
     public async Task<List<ChiTietDonHangCombo>> Get() =>
@@ -20,14 +19,14 @@ public class ChiTietDonHangComboController : ControllerBase
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<ChiTietDonHangCombo>> Get(string id)
     {
-        var ChiTietDonHangCombo = await _chiTietDonHangComboService.GetAsync(id);
+        var chiTietDonHangCombo = await _chiTietDonHangComboService.GetAsync(id);
 
-        if (ChiTietDonHangCombo is null)
+        if (chiTietDonHangCombo is null)
         {
             return NotFound();
         }
 
-        return ChiTietDonHangCombo;
+        return chiTietDonHangCombo;
     }
 
     [HttpPost]
@@ -41,15 +40,14 @@ public class ChiTietDonHangComboController : ControllerBase
     [HttpPut("{id:length(24)}")]
     public async Task<IActionResult> Update(string id, ChiTietDonHangCombo updatedChiTietDonHangCombo)
     {
-        var ChiTietDonHangCombo = await _chiTietDonHangComboService.GetAsync(id);
+        var chiTietDonHangCombo = await _chiTietDonHangComboService.GetAsync(id);
 
-        if (ChiTietDonHangCombo is null)
+        if (chiTietDonHangCombo is null)
         {
             return NotFound();
         }
 
-        updatedChiTietDonHangCombo.Id = ChiTietDonHangCombo.Id;
-
+        updatedChiTietDonHangCombo.Id = chiTietDonHangCombo.Id;
         await _chiTietDonHangComboService.UpdateAsync(id, updatedChiTietDonHangCombo);
 
         return NoContent();
@@ -58,14 +56,14 @@ public class ChiTietDonHangComboController : ControllerBase
     [HttpDelete("{id:length(24)}")]
     public async Task<IActionResult> Delete(string id)
     {
-        var ChiTietDonHangCombo = await _chiTietDonHangComboService.GetAsync(id);
+        var chiTietDonHangCombo = await _chiTietDonHangComboService.GetAsync(id);
 
-        if (ChiTietDonHangCombo is null)
+        if (chiTietDonHangCombo is null)
         {
             return NotFound();
         }
 
-        await _chiTietDonHangComboService.RemoveAsync(ChiTietDonHangCombo.Id);
+        await _chiTietDonHangComboService.RemoveAsync(chiTietDonHangCombo.Id);
 
         return NoContent();
     }

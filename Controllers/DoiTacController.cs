@@ -3,7 +3,6 @@ using DiChoHoCS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiChoHoCS.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 public class DoiTacController : ControllerBase
@@ -21,6 +20,7 @@ public class DoiTacController : ControllerBase
     public async Task<ActionResult<DoiTac>> Get(string id)
     {
         var doiTac = await _doiTacService.GetAsync(id);
+
         if (doiTac is null)
         {
             return NotFound();
@@ -41,6 +41,7 @@ public class DoiTacController : ControllerBase
     public async Task<IActionResult> Update(string id, DoiTac updatedDoiTac)
     {
         var doiTac = await _doiTacService.GetAsync(id);
+
         if (doiTac is null)
         {
             return NotFound();
@@ -56,10 +57,12 @@ public class DoiTacController : ControllerBase
     public async Task<IActionResult> Delete(string id)
     {
         var doiTac = await _doiTacService.GetAsync(id);
+
         if (doiTac is null)
         {
             return NotFound();
         }
+
         await _doiTacService.RemoveAsync(doiTac.Id);
 
         return NoContent();

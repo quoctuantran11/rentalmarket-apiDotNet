@@ -10,11 +10,8 @@ public class DoiTacService
     public DoiTacService(
         IOptions<DiChoHoDatabaseSettings> diChoHoDatabaseSettings)
     {
-        var mongoClient = new MongoClient(
-            diChoHoDatabaseSettings.Value.ConnectionString);
-
-        var mongoDatabase = mongoClient.GetDatabase(
-            diChoHoDatabaseSettings.Value.DatabaseName);
+        var mongoClient = new MongoClient(diChoHoDatabaseSettings.Value.ConnectionString);
+        var mongoDatabase = mongoClient.GetDatabase(diChoHoDatabaseSettings.Value.DatabaseName);
 
         _doiTacCollection = mongoDatabase.GetCollection<DoiTac>(
             diChoHoDatabaseSettings.Value.DoiTacCollectionName);

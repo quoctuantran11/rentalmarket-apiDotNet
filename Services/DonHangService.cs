@@ -10,10 +10,8 @@ public class DonHangService
     public DonHangService(
         IOptions<DiChoHoDatabaseSettings> diChoHoDatabaseSettings)
     {
-        var mongoClient = new MongoClient(
-            diChoHoDatabaseSettings.Value.ConnectionString);
-        var mongoDatabase = mongoClient.GetDatabase(
-            diChoHoDatabaseSettings.Value.DatabaseName);
+        var mongoClient = new MongoClient(diChoHoDatabaseSettings.Value.ConnectionString);
+        var mongoDatabase = mongoClient.GetDatabase(diChoHoDatabaseSettings.Value.DatabaseName);
 
         _donHangCollection = mongoDatabase.GetCollection<DonHang>(
             diChoHoDatabaseSettings.Value.DonHangCollectionName);

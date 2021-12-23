@@ -3,7 +3,6 @@ using DiChoHoCS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiChoHoCS.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 public class ChiTietComboController : ControllerBase
@@ -49,7 +48,6 @@ public class ChiTietComboController : ControllerBase
         }
 
         updatedChiTietCombo.Id = chiTietCombo.Id;
-
         await _chiTietComboService.UpdateAsync(id, updatedChiTietCombo);
 
         return NoContent();

@@ -3,7 +3,6 @@ using DiChoHoCS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiChoHoCS.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 public class GioHangController : ControllerBase
@@ -49,7 +48,6 @@ public class GioHangController : ControllerBase
         }
 
         updatedGioHang.Id = gioHang.Id;
-
         await _gioHangService.UpdateAsync(id, updatedGioHang);
 
         return NoContent();

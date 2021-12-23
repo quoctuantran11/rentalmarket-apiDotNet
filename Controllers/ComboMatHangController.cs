@@ -3,7 +3,6 @@ using DiChoHoCS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiChoHoCS.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 public class ComboMatHangController : ControllerBase
@@ -49,7 +48,6 @@ public class ComboMatHangController : ControllerBase
         }
 
         updatedCBMatHang.Id = comboMatHang.Id;
-
         await _comboMatHangService.UpdateAsync(id, updatedCBMatHang);
 
         return NoContent();

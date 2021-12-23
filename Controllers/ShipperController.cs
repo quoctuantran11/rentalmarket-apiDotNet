@@ -3,7 +3,6 @@ using DiChoHoCS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiChoHoCS.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 public class ShipperController : ControllerBase
@@ -49,7 +48,6 @@ public class ShipperController : ControllerBase
         }
 
         updatedShipper.Id = shipper.Id;
-
         await _shipperService.UpdateAsync(id, updatedShipper);
 
         return NoContent();

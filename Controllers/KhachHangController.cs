@@ -3,7 +3,6 @@ using DiChoHoCS.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DiChoHoCS.Controllers;
-
 [ApiController]
 [Route("api/[controller]")]
 public class KhachHangController : ControllerBase
@@ -49,7 +48,6 @@ public class KhachHangController : ControllerBase
         }
 
         updatedKhachHang.Id = khachHang.Id;
-
         await _khachHangService.UpdateAsync(id, updatedKhachHang);
 
         return NoContent();
