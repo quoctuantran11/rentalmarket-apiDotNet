@@ -18,7 +18,7 @@ public class DoiTac
 
     public DateTime ngay_tham_gia { get; set; }
 
-    public string so_luong_cua_hang { get; set; } = null!;
+    public int so_luong_cua_hang { get; set; }
 
     public string ten_doi_tac { get; set; } = null!;
 
