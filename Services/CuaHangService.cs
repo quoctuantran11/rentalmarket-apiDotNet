@@ -3,7 +3,6 @@ using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 
 namespace DiChoHoCS.Services;
-
 public class CuaHangService
 {
     private readonly IMongoCollection<CuaHang> _cuaHangCollection;
