@@ -1,3 +1,3 @@
 use('DiChoHo');
 
-db.KhachHang.updateMany( {}, { $rename: { "tai_khoan": "ma_tk" } } )
+db.NhanVien.updateMany({}, {$rename: {"ten_nv": "ten_nhan_vien"}})

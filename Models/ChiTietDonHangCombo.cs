@@ -8,7 +8,7 @@ public class ChiTietDonHangCombo
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }
 
-    public string ma_dh { get; set; } = null!;
+    public string ma_don_hang { get; set; } = null!;
 
     public string ma_combo { get; set; } = null!;
 

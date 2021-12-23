@@ -14,9 +14,12 @@ public class DonHang
 
     public int tong_tien { get; set; }
 
-    public string ma_kh { get; set; } = null!;
+    public string ma_khach_hang { get; set; } = null!;
 
-    public string ma_ch { get; set; } = null!;
+    public string ma_cua_hang { get; set; } = null!;
 
     public string ma_shipper { get; set; } = null!;
+
+    public string dia_chi { get; set; } = null!;
+
 }

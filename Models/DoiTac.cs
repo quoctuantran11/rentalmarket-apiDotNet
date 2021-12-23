@@ -20,7 +20,7 @@ public class DoiTac
 
     public string so_luong_cua_hang { get; set; } = null!;
 
-    public string ten_dt { get; set; } = null!;
+    public string ten_doi_tac { get; set; } = null!;
 
     public string trang_thai { get; set; } = null!;
 }

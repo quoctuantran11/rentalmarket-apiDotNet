@@ -14,13 +14,15 @@ public class KhachHang
 
     public string dia_chi { get; set; } = null!;
 
-    public string ma_kv { get; set; } = null!;
+    public string ma_khu_vuc { get; set; } = null!;
 
     public string gioi_tinh { get; set; } = null!;
 
-    public string ten_kh { get; set; } = null!;
+    public string ten_khach_hang { get; set; } = null!;
 
     public DateTime ngay_sinh { get; set; }
 
-    public string ma_tk { get; set; } = null!;
+    public string username { get; set; } = null!;
+
+    public string password { get; set; } = null!;
 }

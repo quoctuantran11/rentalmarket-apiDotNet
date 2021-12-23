@@ -11,8 +11,6 @@ public class DiChoHoDatabaseSettings
 
     public string KhachHangCollectionName { get; set; } = null!;
 
-    public string ShipperCollectionName { get; set; } = null!;
-
     public string MatHangCollectionName { get; set; } = null!;
 
     public string ComboMatHangCollectionName { get; set; } = null!;
