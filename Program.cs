@@ -26,6 +26,7 @@ builder.Services.AddSingleton<DonHangService>();
 builder.Services.AddSingleton<ChiTietDonHangMatHangService>();
 builder.Services.AddSingleton<ChiTietDonHangComboService>();
 builder.Services.AddSingleton<GioHangService>();
+builder.Services.AddSingleton<KhachHangService>();
 
 builder.Services.AddControllers().AddJsonOptions(
     options => options.JsonSerializerOptions.PropertyNamingPolicy = null);

@@ -586,19 +586,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\long\\.nuget\\packages\\": {}
+    "C:\\Users\\Phi Long\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\long\\Desktop\\dichohocs\\DiChoHoCS.csproj",
+      "projectUniqueName": "D:\\rentalmarket-apiDotNet\\DiChoHoCS.csproj",
       "projectName": "DiChoHoCS",
-      "projectPath": "C:\\Users\\long\\Desktop\\dichohocs\\DiChoHoCS.csproj",
-      "packagesPath": "C:\\Users\\long\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\long\\Desktop\\dichohocs\\obj\\",
+      "projectPath": "D:\\rentalmarket-apiDotNet\\DiChoHoCS.csproj",
+      "packagesPath": "C:\\Users\\Phi Long\\.nuget\\packages\\",
+      "outputPath": "D:\\rentalmarket-apiDotNet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\long\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Phi Long\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
