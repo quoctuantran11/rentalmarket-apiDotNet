@@ -17,4 +17,6 @@ public class ComboMatHang
     public int gia_ban { get; set; }
 
     public string ma_cua_hang { get; set; } = null!;
+
+    public string hinh_anh { get; set; } = null!;
 }
