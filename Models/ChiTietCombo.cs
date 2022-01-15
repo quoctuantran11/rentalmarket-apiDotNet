@@ -12,5 +12,5 @@ public class ChiTietCombo
 
     public string ma_combo { get; set; } = null!;
 
-    public int so_luong { get; set; }
+    public int so_luong { get; set;  }
 }
