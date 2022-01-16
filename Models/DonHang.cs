@@ -21,5 +21,6 @@ public class DonHang
     public string ma_shipper { get; set; } = null!;
 
     public string dia_chi { get; set; } = null!;
-
+    
+    public string ngay_dat { get; set; } = null!;
 }
